@@ -4,6 +4,9 @@
 
 <img src='ch0_ultimate_box_unboxed_close.jpg' width='50%'/>
 
+board + 10x led-bar + 10x 220ohm resistors
+<img src='ch0_ultimate_box_unboxed_board.jpg' width='50%'/>
+
 ### note: source Freenove tutorial chapters playlist
 https://www.youtube.com/playlist?list=PLlCFIOdyWXfXNI98tTjUfWsx7-i59nKBr
 
