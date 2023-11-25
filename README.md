@@ -1,20 +1,20 @@
 # 32wroom tutorials - yaml test files 
-## fn-esp32s3 & az-esp32v3 
+## fn-esp32s3 (breadboard cam)
 
 ### Freenove_Ultimate_Starter_Kit_for_ESP32-S3 FNK0082 A1B0 
 <img src='ch0-001_ultimate_box_unboxed_close.jpg' width='50%'/>
 
-### fnk0082 ult. part list
+### note2: fnk0082 ult. part list
 <img src='ch0-002_esp32-s3_fnk0082_part_list.jpg' width='70%'/>
 
-### board + 10x led-bar + 10x 220ohm resistors
+### note3: board + 10x led-bar + 10x 220ohm resistors (running lights)
 <img src='ch0-003_ultimate_box_unboxed_board.jpg' width='50%'/>
 
-### note: source Freenove tutorial chapters playlist
+### note4: source Freenove tutorial chapters playlist
 <img src='ch0-004_esp32-s3_wroom+cam+2usb_pinout.png' width='70%'/>
-https://www.youtube.com/playlist?list=PLlCFIOdyWXfXNI98tTjUfWsx7-i59nKBr
+### note5: https://www.youtube.com/playlist?list=PLlCFIOdyWXfXNI98tTjUfWsx7-i59nKBr
 
-# AZ esp32 v4
+# az-esp32v4 (solded testboard dotted pcb)  
 ## note: source GIMP handdraw reajust real pin out chip
 
 <img src='ch0_esp32-v4_wroom_pinout_az32.png' width='50%'/>
