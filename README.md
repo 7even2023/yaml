@@ -17,19 +17,32 @@
 # az-esp32v4 (solded testboard dotted pcb)  
 ## note: source GIMP handdraw reajust real pin out chip
 
-<img src='ch0_esp32-v4_wroom_pinout_az32.png' width='50%'/>
-<img src='ch0_az32_pcb_bot.jpg' width='50%'/>
-<img src='ch0_az_32chip.png' width='50%'/>
-# haos v11.1 esphome
-## note: day1 unboxed test 
-<img src='ch0_esp32-s3_wroom+5x-az3200x+cb32_esphome-haos11.png' width='70%'/>
+<img src='ch0-101_az32_pcb_bot.jpg' width='50%'/>
+<img src='ch0-102_az_32chip.png' width='50%'/>
+<img src='ch0-103_az32_pcb_bot2+dotted-pcb.jpg' width='50%'/>
+<img src='ch0-104_esp32-v4_wroom_pinout_az32.png' width='50%'/>
+<img src='ch0-105_cb32_pcb_top.jpg' width='50%'/>
+<img src='ch0-106_cb32_pcb_top+relais.jpg' width='50%'/>
 
-<img src='ch0_all_dht11room_esphome-haos11_sensors.png' width='70%'/>
-# test aufbau v0.1 
-## note: day1 unboxed test 
-<img src='ch0_esp_test_aufbau.jpg' width='50%'/>
+# haos v11.1 dashboard home panel overview 
+<img src='ch0-200_all_dht11room_esphome-haos11_sensors.png' width='70%'/>
 
-<img src='ch0_cb32_pcb_top.jpg' width='50%'/>
+## note: haos esphome devices panel overview
+<img src='ch0-201_esp32-s3_wroom+5x-az3200x+cb32_esphome-haos11.png' width='70%'/>
+
+# yaml küche & bad 
+<img src='ch0-202_az32001_esphome-yaml.png' width='50%'/>
+<img src='ch0-203_az32002_esphome-yaml.png' width='50%'/>
+
 # test aufbau v1.0 az32001 küche 
 ## button + relais(incl led) + dht11 + lcd
 ## note: value id temp + humi
+
+# test aufbau v1.0 az32002 küche bad
+## button + relais(incl led) + dht11 
+
+# test aufbau v1.0 az32003 küche schlafzimmer
+## button + relais(incl led) + dht11 
+
+# test aufbau v1.0 az32004+5 wohnzimmer
+## 2x dht11 
