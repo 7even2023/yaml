@@ -1,0 +1,40 @@
+esphome:
+  name: esphome-az32004
+  friendly_name: esphome-az32004
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "7yJxG5QLjNfpmsrYq1Mn+6NLIcWUQLGWyejLIJ3FcaM="
+
+ota:
+  password: "f705c4d392da242671a59dda2630eefb"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esphome-Az32004 Fallback Hotspot"
+    password: "hUv0lsEVMG9c"
+
+captive_portal:
+
+sensor:
+  - platform: dht
+    pin: GPIO 26
+    temperature:
+      name: "Temperature Sensor 4Room "
+    humidity:
+      name: "Humidity Sensor 4Room "
+    update_interval: 60s
+    

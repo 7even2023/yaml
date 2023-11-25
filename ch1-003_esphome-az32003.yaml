@@ -1,0 +1,60 @@
+esphome:
+  name: esphome-az32003
+  friendly_name: esphome-az32003
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "+l9pmjWxFKcpd25/3vFgV3+eOzlMoQfw6SPoiDwE3Os="
+
+ota:
+  password: "2c254ee6bb4bb88db8f7dbadd503fd6f"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esphome-Az32003 Fallback Hotspot"
+    password: "y5ulkDJe3YsY"
+
+captive_portal:
+    
+sensor:
+  - platform: dht
+    pin: GPIO 26
+    temperature:
+      name: "Temperature Sensor 3Room "
+    humidity:
+      name: "Humidity Sensor 3Room "
+    update_interval: 60s
+
+binary_sensor:
+  - platform: gpio
+    pin: GPIO25 
+    id: taster   
+    on_press:
+      then:
+      - switch.toggle: my_led 
+      - delay: 500ms
+      - switch.toggle: my_led
+      - delay: 500ms
+      - switch.toggle: my_led
+      - delay: 500ms
+      - switch.toggle: my_led
+      - delay: 500ms
+
+switch:
+  - platform: gpio
+    pin: GPIO27
+    id: my_led   
+    name: LED27 am GPIO 

@@ -1,0 +1,59 @@
+esphome:
+  name: esphome-az32005
+  friendly_name: esphome-az32005
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "lq8QUcupGCkpfbfYBvcd6gZo0ldZbMm9oVFzGRE8fss="
+
+ota:
+  password: "dd5bafd016ec7d04d9752b1e9a1e1838"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esphome-Az32005 Fallback Hotspot"
+    password: "pkbwIefY0MXw"
+
+captive_portal:
+
+i2c: #(0x27,16,2) lcd1602 PCF8574T, 1=GND, 2=+5V, 3=SDA(orange)auf PIN13, 4=SCL(gelb)auf PIN14  (!PIN12 strapping pin not used)
+  sda: GPIO13
+  scl: GPIO14
+
+sensor:
+  - platform: dht
+    pin: GPIO 26
+    temperature:
+      id: temp
+      name: "Temperature Sensor 5Room "
+    humidity:
+      id: humi
+      name: "Humidity Sensor 5Room "
+    update_interval: 60s
+
+# time:
+ # - platform: homeassistant
+ #   id: ha_time
+
+display:
+  - platform: lcd_pcf8574
+    dimensions: 16x2
+    address: 0x27
+    update_interval: 60s 
+    id: lcd
+    lambda: |-
+      it.printf(0, 0, "Temp: %.1f C", id(temp).state);
+      it.printf(0, 1, "Humi: %.1f rel", id(humi).state);

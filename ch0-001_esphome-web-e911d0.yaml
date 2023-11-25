@@ -1,0 +1,129 @@
+esphome:
+  name: esphome-web-e911d0
+  friendly_name: esphome-web-fn32s3
+
+esp32:
+  board: esp32-s3-devkitc-1
+  framework:
+    type: arduino
+
+
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "1XuPbtJyDAby9yWsl+4lHo7CpbyjaPLAJ/vcxkQEwu0="
+
+ota:
+  password: "f17102930885e79c7385131a54d3fdec"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esphome-Web-E911D0"
+    password: "ntwEYaFNNcsA"
+
+captive_portal:
+
+switch:
+  - platform: gpio
+    pin: GPIO2
+    id: my_led   
+    name: LED2 am GPIO   
+
+  - platform: gpio
+    pin: GPIO42
+    id: my_led2   
+    name: LED42 am GPIO  
+
+  - platform: gpio
+    pin: GPIO41
+    id: my_led3   
+    name: LED41 am GPIO  
+
+  - platform: gpio
+    pin: GPIO40
+    id: my_led4  
+    name: LED40 am GPIO  
+
+  - platform: gpio
+    pin: GPIO39
+    id: my_led5   
+    name: LED39 am GPIO  
+
+  - platform: gpio
+    pin: GPIO38
+    id: my_led6  
+    name: LED38 am GPIO  
+
+  - platform: gpio
+    pin: GPIO37
+    id: my_led7  
+    name: LED37 am GPIO  
+
+  - platform: gpio
+    pin: GPIO36
+    id: my_led8  
+    name: LED36 am GPIO  
+
+  - platform: gpio
+    pin: GPIO35
+    id: my_led9 
+    name: LED35 am GPIO  
+
+  - platform: gpio
+    pin: GPIO45
+    id: my_led10   
+    name: LED45 am GPIO  
+
+  - platform: gpio
+    pin: GPIO48
+    id: my_led11   
+    name: LED48 am GPIO  
+
+binary_sensor:
+  - platform: gpio
+    pin: GPIO4 
+    id: taster   
+    on_press:
+      then:
+      - switch.toggle: my_led 
+      - delay: 500ms
+      - switch.toggle: my_led
+      - delay: 500ms
+      - switch.toggle: my_led
+      - delay: 500ms
+      - switch.toggle: my_led
+      - delay: 500ms
+
+  - platform: gpio
+    pin: GPIO5 
+    id: taster2   
+    on_press:
+      then:
+      - switch.toggle: my_led2 
+      - delay: 500ms
+      - switch.toggle: my_led3
+      - delay: 500ms
+      - switch.toggle: my_led4
+      - delay: 500ms
+      - switch.toggle: my_led5
+      - delay: 500ms
+      - switch.toggle: my_led6
+      - delay: 500ms
+      - switch.toggle: my_led7
+      - delay: 500ms
+      - switch.toggle: my_led8
+      - delay: 500ms
+      - switch.toggle: my_led9
+      - delay: 500ms
+      - switch.toggle: my_led10
+      - delay: 500ms
+      - switch.toggle: my_led11
+       
