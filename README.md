@@ -53,12 +53,20 @@ https://www.youtube.com/playlist?list=PLlCFIOdyWXfXNI98tTjUfWsx7-i59nKBr
 ### <a href="https://github.com/7even2023/yaml/blob/76fa6ba39aad9fe83afc449854af3aca2f6d9836/ch0-001_esphome-web-e911d0.yaml">ch1-003_esphome-az32003.yaml</a>
 <img src='ch1-003a_az32003_schlafzimmer.jpg' width='50%'/>
 
-# test aufbau v1.0 az32004+5 wohnzimmer
+# test aufbau v1.0 az32004 wohnzimmer
 ### relais(incl led) + dht11 
 ### <a href="https://github.com/7even2023/yaml/blob/76fa6ba39aad9fe83afc449854af3aca2f6d9836/ch0-001_esphome-web-e911d0.yaml">ch1-004_esphome-az32004.yaml</a>
+<img src='ch1-004a_az32004_wohnzimmer.jpg' width='50%'/>
+
+# test aufbau v1.0 az32005 flur
+### motion(ir) + neopixel rgb light (n.a. relais(incl led) + dht11) 
 ### <a href="https://github.com/7even2023/yaml/blob/76fa6ba39aad9fe83afc449854af3aca2f6d9836/ch0-001_esphome-web-e911d0.yaml">ch1-005_esphome-az32005.yaml</a>
-<img src='ch1-004a_az32004+5_wohnzimmer.jpg' width='50%'/>
+<img src='ch1-005a_az32005_flur.jpg' width='50%'/>
 
 # test aufbau v1.0 cb32 balkon
 ### relais(incl led) + dht11 
 ### <a href="https://github.com/7even2023/yaml/blob/76fa6ba39aad9fe83afc449854af3aca2f6d9836/ch0-001_esphome-web-e911d0.yaml">chx-00x_esphome-cb32.yaml</a>
+<img src='ch1-006a_cb32_balkon.jpg' width='50%'/>
+
+wip-changelog261123-1119: todo yaml perma file links , pics + code balkon flur wohnzimmer
+
