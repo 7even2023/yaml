@@ -8,8 +8,8 @@
 <img src='ch0-002_esp32-s3_fnk0082_part_list.jpg' width='70%'/>
 
 ### note3: board + 10x led-bar + 10x 220ohm resistors 
-# running lights ch0-001_esphome-web-e911d0.yaml
-# https://github.com/7even2023/yaml/blob/76fa6ba39aad9fe83afc449854af3aca2f6d9836/ch0-001_esphome-web-e911d0.yaml
+### running lights 
+### <a href="https://github.com/7even2023/yaml/blob/76fa6ba39aad9fe83afc449854af3aca2f6d9836/ch0-001_esphome-web-e911d0.yaml">ch0-001_esphome-web-e911d0.yaml</a>
 <img src='ch0-003_ultimate_box_unboxed_board.jpg' width='50%'/>
 
 ### note4: source Freenove tutorial chapters playlist
