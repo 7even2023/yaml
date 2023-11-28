@@ -1,0 +1,225 @@
+esphome:
+  name: esphome-az32005
+  friendly_name: esphome-az32005
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "lq8QUcupGCkpfbfYBvcd6gZo0ldZbMm9oVFzGRE8fss="
+
+ota:
+  password: "dd5bafd016ec7d04d9752b1e9a1e1838"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Esphome-Az32005 Fallback Hotspot"
+    password: "pkbwIefY0MXw"
+
+captive_portal:
+
+binary_sensor:
+  - platform: gpio
+    pin: GPIO18 
+    id: taster1   
+    on_press:
+      then:
+      - switch.toggle: my_led 
+      - delay: 500ms
+      - switch.toggle: my_led
+      - delay: 500ms
+      - switch.toggle: my_led
+      - delay: 500ms
+      - switch.toggle: my_led
+      - delay: 500ms
+
+  - platform: gpio
+    pin: GPIO19 
+    id: taster2   
+    on_press:
+      then:
+      - switch.toggle: my_led 
+      - delay: 1000ms
+      - switch.toggle: my_led
+      - delay: 1000ms
+      - switch.toggle: my_led
+      - delay: 1000ms
+      - switch.toggle: my_led
+      - delay: 1000ms
+      
+sensor:
+  # Fotowiderstand (siehe Schaltplan):
+  -  platform: adc
+     id: source_sensor0
+     name: "Thermistor Sensor"
+     pin: GPIO32
+     update_interval: 10s
+     filters:
+        - offset: 0.0
+        - multiply: 1.0  #3.3
+        - calibrate_linear:
+          - 0.0 -> -10.0      # only 10k , removed sensor? , GND only? 0.07500 V 0.08100 V 0% licht - 0.20800 richtig 0.1 dunkel 0.31800 V- 1.0 dunkel
+          - 0.5 -> 7.0    # 0.5975 -> 50.0   0,5 / 0,5225 = 50%  math 
+          - 1.045 -> 23.8  # 3,3V -> look adc max voltage input spanne 6x GPIO32 - GIPO 39  with 1.04500 V =100% (1.1V)98.39
+     unit_of_measurement: "°C"  #ohne = Volt VCC adc spanne 0-1.1v
+     #unit_of_measurement: "%"
+
+
+  # Fotowiderstand (siehe Schaltplan):
+  -  platform: adc
+     id: source_sensor1
+     name: "Foto Sensor"
+     pin: GPIO33
+     update_interval: 10s
+     filters:
+        - offset: 0.0
+        - multiply: 1.0  #3.3
+        - calibrate_linear:
+          - 0.0 -> -10.0      # only 10k , removed sensor? , GND only? 0.07500 V 0.08100 V 0% licht - 0.20800 richtig 0.1 dunkel 0.31800 V- 1.0 dunkel
+          - 0.5 -> 50.0    # 0.5975 -> 50.0   0,5 / 0,5225 = 50%  math 
+          - 1.045 -> 98.39  # 3,3V -> look adc max voltage input spanne 6x GPIO32 - GIPO 39  with 1.04500 V =100% (1.1V)98.39
+          #(1.1V) -> 100.00%
+     #unit_of_measurement: "°C"  ohne = Volt VCC adc spanne 0-1.1v
+     unit_of_measurement: "%"
+
+light:
+  - platform: fastled_clockless
+    chipset: WS2812B
+    pin: GPIO25
+    num_leds: 8
+    rgb_order: GRB
+    name: "FastLED NEOPIXEL Light"
+    id: my_light
+    effects:
+      - random:
+          name: Random Effect With Custom Values
+          transition_length: 2s
+          update_interval: 3s
+
+      - strobe:
+          name: Strobe Effect With Custom Values
+          colors:
+            - state: true
+              brightness: 100%
+              red: 100%
+              green: 00%
+              blue: 0%
+              duration: 500ms
+            - state: false
+              duration: 250ms
+            - state: true
+              brightness: 100%
+              red: 0%
+              green: 100%
+              blue: 0%
+              duration: 500ms
+
+      - flicker:
+          name: Flicker Effect With Custom Values1
+          alpha: 95%
+          intensity: 1.5%
+
+      - addressable_flicker:
+          name: Flicker Effect With Custom Values2
+          update_interval: 16ms
+          intensity: 5%
+
+      - addressable_rainbow:
+          name: Rainbow Effect Full
+          speed: 10
+          width: 8
+
+      - addressable_rainbow:
+          name: Rainbow Effect Half
+          speed: 5
+          width: 4
+
+      - addressable_color_wipe:
+          name: Color Wipe Effect With Custom Values
+          colors:
+            - red: 100%
+              green: 100%
+              blue: 100%
+              num_leds: 1
+            - red: 0%
+              green: 0%
+              blue: 0%
+              num_leds: 1
+          add_led_interval: 100ms
+          reverse: false
+
+      - addressable_scan:
+          name: Scan Effect With Custom Values
+          move_interval: 100ms
+          scan_width: 1
+
+      - addressable_twinkle:
+          name: Twinkle Effect With Custom Values
+          twinkle_probability: 5%
+          progress_interval: 4ms
+
+      - addressable_fireworks:
+          name: Fireworks Effect With Custom Values
+          update_interval: 32ms
+          spark_probability: 10%
+          use_random_color: false
+          fade_out_rate: 120
+
+      - automation:
+          name: Custom Automation Effect
+          sequence:
+          - light.addressable_set:
+              id: my_light
+              red: 100%
+              green: 100%
+              blue: 100%
+          - delay: 200ms
+          - light.addressable_set:
+              id: my_light
+              range_from: 0
+              range_to: 8
+              red: 100%
+              green: 0%
+              blue: 0%
+
+text_sensor:
+  - platform: template
+    name: "Template Text Sensor1"
+    lambda: |-
+      if (!id(my_led).state) {
+         return {"Relais1 ist aus"};
+      } else {
+         return {"Relais1 ist ein"};
+      }
+    id: template_text1
+    update_interval: 60s
+    
+switch:
+  - platform: gpio
+    pin: GPIO27
+    id: my_led
+    name: "Relais1"
+    on_turn_on:
+      then:
+          - text_sensor.template.publish:
+              id: template_text1
+              state: "Relais1 ein"
+    on_turn_off:
+      then:
+          - text_sensor.template.publish:
+              id: template_text1
+              state: "Relais1 aus"
+
+
+
