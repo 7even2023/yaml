@@ -73,11 +73,11 @@ https://www.youtube.com/playlist?list=PLlCFIOdyWXfXNI98tTjUfWsx7-i59nKBr
 ### <a href="https://github.com/7even2023/yaml/blob/76fa6ba39aad9fe83afc449854af3aca2f6d9836/ch0-001_esphome-web-e911d0.yaml">ch1-004_esphome-az32004.yaml</a>
 <img src='ch1-004a_az32004_wohnzimmer.jpg' width='50%'/>
 
-# env.5 az32005 = flur !(todo splitt env4+5+7) wip no pics 
+# env.5 az32005 = flur (todo motion) wip motion(ir)
 <img src='ch0-605_haos11_sensors_az32005flur.png' width='70%'/>
 
-### motion(ir) + neopixel rgb light (n.a. relais(incl led) + dht11) 
-### <a href="https://github.com/7even2023/yaml/blob/76fa6ba39aad9fe83afc449854af3aca2f6d9836/ch0-001_esphome-web-e911d0.yaml">ch1-005_esphome-az32005.yaml</a>
+###  neopixel rgb light (relais(incl led) + fotosensor + thermistor) 
+### <a href="https://github.com/7even2023/yaml/blob/76fa6ba39aad9fe83afc449854af3aca2f6d9836/ch0-001_esphome-web-e911d0.yaml">ch1-005_esphome-az32005rgb.yaml</a>
 <img src='ch1-005a_az32005_flur.jpg' width='50%'/>
 <img src='ch1-005b_az32005_flur_rgb.jpg' width='50%'/>
 
@@ -90,5 +90,8 @@ https://www.youtube.com/playlist?list=PLlCFIOdyWXfXNI98tTjUfWsx7-i59nKBr
 
 wip-changelog261123-1234: 
 todo fix hyperlinks in readme to yaml perma file links 
-todo add v1.1 code balkon=outside/aussen flur wohnzimmer
+todo add v1.1 code balkon=outside/aussen wohnzimmer env4+7 splitt
+wip-changelog281123-1644: 
+added flur rgb only
+todo add alle Schaltpläne
 
