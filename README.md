@@ -74,11 +74,12 @@ https://www.youtube.com/playlist?list=PLlCFIOdyWXfXNI98tTjUfWsx7-i59nKBr
 <img src='ch1-004a_az32004_wohnzimmer.jpg' width='50%'/>
 
 # env.5 az32005 = flur !(todo splitt env4+5+7) wip no pics 
-<img src='ch0-604_haos11_sensors_az32004wohn.png' width='70%'/>
+<img src='ch0-605_haos11_sensors_az32005flur.png' width='70%'/>
 
 ### motion(ir) + neopixel rgb light (n.a. relais(incl led) + dht11) 
 ### <a href="https://github.com/7even2023/yaml/blob/76fa6ba39aad9fe83afc449854af3aca2f6d9836/ch0-001_esphome-web-e911d0.yaml">ch1-005_esphome-az32005.yaml</a>
 <img src='ch1-005a_az32005_flur.jpg' width='50%'/>
+<img src='ch1-005b_az32005_flur_rgb.jpg' width='50%'/>
 
 # env.6 cb32 = balkon (outside/aussen)
 <img src='ch0-606_haos11_sensors_cb32balkon.png' width='70%'/>
